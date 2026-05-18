@@ -1,4 +1,9 @@
-/* This JavaScript controls the FlowState audio player, including play/pause, volume, progress, time display, clickable progress bar, and Focus Mode. */
+/* This JavaScript controls the FlowState audio player, including play/pause, volume, progress, time display, clickable progress bar, and Focus Mode. 
+I used the following YouTube videos to help develop my code for this section: 
+https://www.youtube.com/watch?v=QTHRWGn_sJw "Build a Music Player | Vanilla JavaScript" 
+https://www.youtube.com/watch?v=JtrFzoL1joI "How To Make A Music Player Using HTML CSS And JavaScript"
+From these videos, I mainly looked at sections for the JavaScript, as I was already familiar with HTML and CSS from the previous assignment. 
+In this section, I also used ChatGPT a couple times when troubleshooting errors */
 
 const audio = document.getElementById("audio-player");
 const playButton = document.getElementById("play-pause-btn");
@@ -32,7 +37,7 @@ volume.oninput = function () {
     audio.volume = volume.value;
 };
 
-/* This converts seconds into readable time and prevents NaN errors. */
+/* This converts the time into seconds to display either side of the player. */
 function makeTime(seconds) {
     if (isNaN(seconds)) {
         return "0:00";
@@ -70,7 +75,7 @@ progressBar.onclick = function (event) {
     let barWidth = progressBar.clientWidth;
     let clickPosition = event.offsetX;
 
-    if (!isNaN(audio.duration)) {
+    if (!isNaN(audio.duration)) { /* had a few issues with one of the time areas displaying as the text "Nan:Nan" */
         audio.currentTime = (clickPosition / barWidth) * audio.duration;
     }
 };
@@ -81,7 +86,7 @@ audio.onended = function () {
     progressFill.style.width = "0%";
 };
 
-/* This is my custom Focus Mode feature, which creates a more immersive and distraction-free study environment. */
+/* Custom Focus Mode feature, which creates a more immersive and distraction-free study environment. */
 focusButton.onclick = function () {
     document.body.classList.toggle("focus-mode");
 

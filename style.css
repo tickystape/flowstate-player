@@ -1,14 +1,13 @@
-/* 
-This helps to make sizing more consistent across the entire website.
-Using border-box helps prevent layout issues when adding padding or borders.
-*/
+/* This helps to make sizing more consistent across the entire website.
+Using border-box helps prevent layout issues when adding padding or borders. */
 * {
     box-sizing: border-box;
 }
 
 /* This section styles the overall page background and typography.
 I used layered radial gradients and dark colours to create a calming
-lo-fi atmosphere inspired by modern study and ambient music interfaces. */
+lo-fi atmosphere inspired by Apple's newer IOS user interfaces, as well as
+modern study and ambient music interfaces. */
 body {
     min-height: 100vh;
     margin: 0;
@@ -179,10 +178,8 @@ Flexbox is used to evenly separate both values for readability.
     font-size: 0.9rem;
 }
 
-/* 
-This section styles the volume slider area.
-Consistent spacing and softer colours help maintain the clean interface style.
-*/
+/* style for the volume slider area.
+Consistent spacing and softer colours help maintain the clean interface style. */
 label {
     display: grid;
     gap: 8px;
@@ -194,19 +191,16 @@ input[type="range"] {
     width: 100%;
 }
 
-/* 
-The Focus Mode button uses a brighter gradient to make the feature stand out.
+/* The Focus Mode button uses a brighter gradient to make the feature stand out.
 This reinforces the importance of the custom functionality added to the project.
-*/
+Also helps to maintain the visual heirarchy of the page. */
 #focus-mode-btn {
     background: linear-gradient(135deg, #a78bfa, #38bdf8);
     color: white;
 }
 
-/* 
-This panel provides additional information about the focus functionality.
-Increased line spacing improves readability and accessibility.
-*/
+/* This panel provides additional information about the focus functionality.
+Increased line spacing improves readability and accessibility. */
 .focus-panel h2 {
     margin-top: 0;
 }
@@ -216,63 +210,52 @@ Increased line spacing improves readability and accessibility.
     line-height: 1.6;
 }
 
-/* 
-The footer contains project attribution and assignment information.
-Muted colours reduce distraction while maintaining readability.
-*/
+/* The footer contains project attribution and assignment information.
+Muted grey colours reduce distraction while maintaining readability. */
 footer {
     text-align: center;
     padding: 32px 24px;
     color: #64748b;
 }
 
-/* 
-Focus Mode removes unnecessary distractions such as the header and footer.
-This feature was designed to support concentration during study sessions.
-*/
+/* Focus Mode removes unnecessary distractions such as the header and footer.
+Aims to help with concentration during study sessions. 
+I used ChatGPT for this section in learning how to focus and hide certain elements in the page. */
 body.focus-mode header,
 body.focus-mode footer {
     display: none;
 }
 
-/* 
-This section changes the page appearance during Focus Mode.
-The darker simplified interface helps users maintain attention on the media player.
-*/
+/* This section changes the page appearance during Focus Mode.
+The darker simplified interface helps users maintain attention on the media player,
+in contrast to the brighter and busier main page. */
 body.focus-mode {
     background:
         radial-gradient(circle at center, rgba(56, 189, 248, 0.2), transparent 35%),
         #020617;
 }
 
-/* 
-This layout adjustment centers the player during Focus Mode,
-making the interface feel more immersive and distraction-free.
-*/
+/* This layout adjustment centers the player during Focus Mode,
+making the interface feel more immersive and distraction-free. */
 body.focus-mode .container {
     min-height: 100vh;
     place-content: center;
 }
 
-/* 
-This subtle scaling effect helps visually emphasize the active player
-while Focus Mode is enabled.
-*/
+/* This subtle scaling effect helps visually emphasize the active player
+while Focus Mode is enabled. */
 body.focus-mode .player-card {
     transform: scale(1.03);
 }
 
-/* 
-The brighter border helps communicate that Focus Mode is currently active.
-*/
+/* The brighter border helps communicate that Focus Mode is currently active. */
 body.focus-mode .focus-panel {
     border-color: rgba(56, 189, 248, 0.45);
 }
 
-/* 
-This animation creates gentle floating movement for the album artwork icon.
+/*  Creates gentle floating movement for the album artwork icon.
 Subtle animation was chosen to maintain a calming atmosphere.
-*/
+YouTube tutorial used for CSS animation: https://www.youtube.com/watch?v=z2LQYsZhsFw */
 @keyframes float {
 
     0%, 100% {
@@ -284,10 +267,9 @@ Subtle animation was chosen to maintain a calming atmosphere.
     }
 }
 
-/* 
-These responsive adjustments improve usability on smaller mobile screens
+/* Border adjustments to improve usability on smaller mobile screens
 by reducing spacing and resizing large visual elements.
-*/
+YouTUbe tutorial used for responsive media: https://www.youtube.com/watch?v=n9yI6fjkrfE  */
 @media (max-width: 600px) {
 
     .player-card,
