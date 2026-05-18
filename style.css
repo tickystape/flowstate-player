@@ -342,9 +342,9 @@ by reducing spacing and resizing large visual elements.
 
 
 .volume-control img { 
-    width: 30px;
+    width: 24px;
 
-    height: 30px;
+    height: 24px;
 
     object-fit: contain;
 }
@@ -352,7 +352,7 @@ by reducing spacing and resizing large visual elements.
 
 /* Creates a cleaner medium-sized horizontal slider that feels less cramped. */
 #volume-slider {
-    width: 240px;
+    width: 260px;
 
     transform: none;
 
