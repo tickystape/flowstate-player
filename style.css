@@ -89,10 +89,7 @@ more alive and immersive without distracting the user while studying. */
     animation: float 4s ease-in-out infinite;
 }
 
-/* 
-This section styles the song title and supporting track information.
-The visual hierarchy helps users quickly identify the current media.
-*/
+/* song title and supporting track information spacing. The visual hierarchy helps users quickly identify the current media. */
 .player-card h2 {
     margin: 0;
     font-size: 2rem;
@@ -103,10 +100,8 @@ The visual hierarchy helps users quickly identify the current media.
     color: #94a3b8;
 }
 
-/* 
-This grid layout organizes the media controls with consistent spacing,
-improving usability and keeping the interface visually clean.
-*/
+/* This grid layout organizes the media controls with consistent spacing,
+improving usability and keeping the interface visually clean. */
 .custom-controls {
     margin-top: 24px;
     display: grid;
@@ -338,6 +333,8 @@ by reducing spacing and resizing large visual elements.
     gap: 18px;
 
     margin-top: 10px;
+
+    margin-bottom: 10px;
 }
 
 
