@@ -38,31 +38,32 @@ volume.oninput = function () {
 
 /* This converts the audio time into a readable minute and second format for the playback timer. */
 
+/* This converts the audio time into a readable minute and second format, while also preventing NaN errors before the audio has loaded. */
 function makeTime(seconds) {
+    if (isNaN(seconds)) {
+        return "0:00";
+    }
 
     let min = Math.floor(seconds / 60);
-
     let sec = Math.floor(seconds % 60);
 
     if (sec < 10) {
-
         sec = "0" + sec;
     }
 
     return min + ":" + sec;
 }
 
-
 /* This updates the progress bar and playback time while the audio is playing. */
-
 audio.ontimeupdate = function () {
+    let progress = (audio.currentTime / audio.duration) 100;
 
-    let progress = (audio.currentTime / audio.duration) * 100;
+    if (isNaN(progress)) {
+        progress = 0;
+    }
 
     progressFill.style.width = progress + "%";
-
     currentTime.textContent = makeTime(audio.currentTime);
-
     duration.textContent = makeTime(audio.duration);
 };
 
