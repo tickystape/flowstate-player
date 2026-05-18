@@ -327,34 +327,27 @@ by reducing spacing and resizing large visual elements.
 }
 
 
-/* Creates a smaller vertical volume slider that fits the compact media player layout more cleanly. */
-
+/* This section makes the volume control compact and readable. The icon is also placed inside a light circle so the black image stands out. */
 .volume-control {
-    height: 100px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 12px; 
 
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 12px;
+    width: fit-content;
+    margin: 0 auto;
 }
 
-
-/* This styles the volume icon. */
-
-.volume-control img {
-    width: 22px;
-
+.volume-control img { 
+    width: 22px; 
     height: 22px;
+
+    background: #e0f2fe;
+    padding: 8px;
+    border-radius: 50%;
 }
 
-
-/* Rotates the slider vertically instead of being horizontal */
-
-#volume-slider {
-    width: 80px;
-
-    transform: rotate(-90deg);
-}
+#volume-slider { 
+    width: 120px;
+    transform: none;
+} 
