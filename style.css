@@ -1,120 +1,309 @@
-:root {
-    --primary-bg-color: #f4f4f4;
-    --text-color: #333;
-    --main-bg-color: #333;
-    --main-text-color: #fff;
-    --main-btn-bg-color: #938989;
-  }
-  
-  body,
-  h1,
-  p,
-  ul {
+/* 
+This helps to make sizing more consistent across the entire website.
+Using border-box helps prevent layout issues when adding padding or borders.
+*/
+* {
+    box-sizing: border-box;
+}
+
+/* This section styles the overall page background and typography.
+I used layered radial gradients and dark colours to create a calming
+lo-fi atmosphere inspired by modern study and ambient music interfaces. */
+body {
+    min-height: 100vh;
     margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    font-family: "Arial", sans-serif;
-    background-color: var(--primary-bg-color);
-    color: var(--text-color);
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  /* Add additional styles as needed */
-  
-  /* Create a container for the main content */
-  .container {
-    max-width: 1000px;
-    width: 100%;
-    padding: 10px;
-  }
-  
-  /* Header styling */
-  header {
-    background-color: var(--main-bg-color);
-    color: var(--main-text-color);
-    padding: 10px 0;
+    font-family: Arial, sans-serif;
+    color: #f8fafc;
+
+    background:
+        radial-gradient(circle at top left, rgba(168, 85, 247, 0.35), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(14, 165, 233, 0.25), transparent 35%),
+        #020617;
+}
+
+/* Styles for the top header containing the project title and subtitle. */
+header {
     text-align: center;
-    width: 100%;
-  }
-  
-  /* Navigation styling */
-  nav {
-    margin-top: 20px;
-    text-align: center;
-  }
-  
-  nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-  }
-  
-  nav ul li {
-    margin-right: 20px;
-  }
-  
-  nav a {
-    text-decoration: none;
-    color: var(--text-color);
-  }
-  
-  /* Media player styling */
-  .media-player {
-    width: 100%;
+    padding: 48px 24px 24px;
+}
+
+/* The main title is intentionally large and responsive to make the branding
+feel modern and immersive across different screen sizes. */
+header h1 {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    letter-spacing: -0.08em;
+    margin: 0;
+}
+
+/* The subtitle uses softer colours to create contrast against the title
+while still maintaining readability within the dark theme. */
+header p {
+    color: #cbd5e1;
+    margin-top: 12px;
+}
+
+/* Adds a container for the spacing and width of the whole website layout.
+Using a centered grid layout improves responsiveness and readability. */
+.container {
+    width: min(900px, 92%);
     margin: 0 auto;
-  }
-  
-  .media-player video {
-    max-width: 100%;
-  }
-  
-  .custom-controls {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 10px;
-    width: 100%;
-  }
-  
-  .custom-controls button {
-    background-color: var(--main-btn-bg-color);
-    color: var(--main-text-color);
+    display: grid;
+    gap: 24px;
+}
+
+/* These cards contain the media player and focus information.
+I was inspired by Apple's IOS design with transparency and blur effects
+to create a calming and modern user interface appropriate for a study player. */
+.player-card,
+.focus-panel {
+    background: rgba(15, 23, 42, 0.78);
+    border: 1px solid rgba(148, 163, 184, 0.22);
+    border-radius: 28px;
+    padding: 28px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(18px);
+}
+
+/* This section represents the visual album artwork area.
+The gradient colours and glowing effect help reinforce the relaxing ambient theme.
+*/
+.album-art {
+    height: 260px;
+    border-radius: 24px;
+
+    display: grid;
+    place-items: center;
+
+    background:
+        linear-gradient(135deg, rgba(168, 85, 247, 0.5), rgba(14, 165, 233, 0.35)),
+        #0f172a;
+
+    margin-bottom: 24px;
+
+    box-shadow: inset 0 0 80px rgba(255, 255, 255, 0.08);
+}
+
+/* 
+This icon animation adds subtle movement to make the interface feel
+more alive and immersive without distracting the user while studying.
+*/
+.album-art span {
+    font-size: 5rem;
+    animation: float 4s ease-in-out infinite;
+}
+
+/* 
+This section styles the song title and supporting track information.
+The visual hierarchy helps users quickly identify the current media.
+*/
+.player-card h2 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.track-info {
+    margin-top: 6px;
+    color: #94a3b8;
+}
+
+/* 
+This grid layout organizes the media controls with consistent spacing,
+improving usability and keeping the interface visually clean.
+*/
+.custom-controls {
+    margin-top: 24px;
+    display: grid;
+    gap: 16px;
+}
+
+/* 
+These button styles were designed to feel modern and interactive.
+Hover animations and rounded edges improve feedback and usability.
+*/
+button {
     border: none;
-    padding: 8px 12px;
+    border-radius: 999px;
+    padding: 14px 20px;
+
+    background: #e0f2fe;
+    color: #020617;
+
+    font-weight: 700;
     cursor: pointer;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .progress-bar {
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+/* 
+This hover effect provides clear visual feedback to users when interacting
+with controls, helping the interface feel more responsive and engaging.
+*/
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(14, 165, 233, 0.25);
+}
+
+/* 
+This section styles the custom audio progress bar.
+Rounded corners and gradient colours were used to match the overall aesthetic.
+*/
+.progress-bar {
+    height: 12px;
     width: 100%;
-    height: 10px;
-    background-color: #ddd;
-    margin-top: 10px;
+
+    background: rgba(148, 163, 184, 0.25);
+
+    border-radius: 999px;
     overflow: hidden;
-  }
-  
-  .progress-bar span {
+
+    cursor: pointer;
+}
+
+/* 
+The fill element visually displays the current playback progress of the audio.
+*/
+#progress-bar-fill {
     display: block;
     height: 100%;
-    background-color: var(--main-bg-color);
-    width: 0;
-    transition: width 0.3s ease;
-  }
-  
-  /* Footer styling */
-  footer {
-    background-color: var(--main-bg-color);
-    color: var(--main-text-color);
-    text-align: center;
-    padding: 10px 0;
+    width: 0%;
+
+    background: linear-gradient(90deg, #a78bfa, #38bdf8);
+
+    border-radius: 999px;
+}
+
+/* 
+This section displays the current playback time and total duration.
+Flexbox is used to evenly separate both values for readability.
+*/
+.time-row {
+    display: flex;
+    justify-content: space-between;
+
+    color: #cbd5e1;
+    font-size: 0.9rem;
+}
+
+/* 
+This section styles the volume slider area.
+Consistent spacing and softer colours help maintain the clean interface style.
+*/
+label {
+    display: grid;
+    gap: 8px;
+
+    color: #cbd5e1;
+}
+
+input[type="range"] {
     width: 100%;
-  }
+}
+
+/* 
+The Focus Mode button uses a brighter gradient to make the feature stand out.
+This reinforces the importance of the custom functionality added to the project.
+*/
+#focus-mode-btn {
+    background: linear-gradient(135deg, #a78bfa, #38bdf8);
+    color: white;
+}
+
+/* 
+This panel provides additional information about the focus functionality.
+Increased line spacing improves readability and accessibility.
+*/
+.focus-panel h2 {
+    margin-top: 0;
+}
+
+.focus-panel p {
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+/* 
+The footer contains project attribution and assignment information.
+Muted colours reduce distraction while maintaining readability.
+*/
+footer {
+    text-align: center;
+    padding: 32px 24px;
+    color: #64748b;
+}
+
+/* 
+Focus Mode removes unnecessary distractions such as the header and footer.
+This feature was designed to support concentration during study sessions.
+*/
+body.focus-mode header,
+body.focus-mode footer {
+    display: none;
+}
+
+/* 
+This section changes the page appearance during Focus Mode.
+The darker simplified interface helps users maintain attention on the media player.
+*/
+body.focus-mode {
+    background:
+        radial-gradient(circle at center, rgba(56, 189, 248, 0.2), transparent 35%),
+        #020617;
+}
+
+/* 
+This layout adjustment centers the player during Focus Mode,
+making the interface feel more immersive and distraction-free.
+*/
+body.focus-mode .container {
+    min-height: 100vh;
+    place-content: center;
+}
+
+/* 
+This subtle scaling effect helps visually emphasize the active player
+while Focus Mode is enabled.
+*/
+body.focus-mode .player-card {
+    transform: scale(1.03);
+}
+
+/* 
+The brighter border helps communicate that Focus Mode is currently active.
+*/
+body.focus-mode .focus-panel {
+    border-color: rgba(56, 189, 248, 0.45);
+}
+
+/* 
+This animation creates gentle floating movement for the album artwork icon.
+Subtle animation was chosen to maintain a calming atmosphere.
+*/
+@keyframes float {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* 
+These responsive adjustments improve usability on smaller mobile screens
+by reducing spacing and resizing large visual elements.
+*/
+@media (max-width: 600px) {
+
+    .player-card,
+    .focus-panel {
+        padding: 20px;
+    }
+
+    .album-art {
+        height: 200px;
+    }
+}
