@@ -9,6 +9,7 @@ const currentTime = document.getElementById("current-time");
 const duration = document.getElementById("duration");
 const volume = document.getElementById("volume-slider");
 const focusButton = document.getElementById("focus-mode-btn");
+const progressBar = document.querySelector(".progress-bar");
 
 /* This sets the starting volume so the audio does not begin too loudly. */
 audio.volume = 0.7;
@@ -82,4 +83,13 @@ focusButton.onclick = function () {
     } else { 
         focusButton.textContent = "Enter Focus Mode";
     } 
+};
+
+/* Progress bar can be clicked to jump to a different part of the song. */
+progressBar.onclick = function (event) {
+    let barWidth = progressBar.clientWidth;
+    let clickPosition = event.offsetX;
+    let songDuration = audio.duration;
+
+    audio.currentTime = (clickPosition / barWidth) songDuration; 
 };
