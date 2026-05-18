@@ -327,27 +327,41 @@ by reducing spacing and resizing large visual elements.
 }
 
 
-/* This section makes the volume control compact and readable. The icon is also placed inside a light circle so the black image stands out. */
+/* Style for volume controls so they are easier to see and more balanced within the player layout. */
 .volume-control {
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    gap: 12px; 
+    display: flex;
 
-    width: fit-content;
-    margin: 0 auto;
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    margin-top: 10px;
 }
 
-.volume-control img { 
-    width: 22px; 
-    height: 22px;
+
+/* Bright circular background behind the icon so it stands out clearly against the dark interface. */
+.volume-control img {
+    width: 28px;
+
+    height: 28px;
 
     background: #e0f2fe;
-    padding: 8px;
+
+    padding: 10px;
+
     border-radius: 50%;
+
+    box-shadow: 0 0 18px rgba(56, 189, 248, 0.25);
 }
 
-#volume-slider { 
-    width: 120px;
+
+/* Creates a cleaner medium-sized horizontal slider that feels less cramped. */
+#volume-slider {
+    width: 180px;
+
     transform: none;
-} 
+
+    cursor: pointer;
+}
