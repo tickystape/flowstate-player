@@ -30,7 +30,10 @@
             </audio>
 
             <div class="custom-controls">
-                <button id="play-pause-btn">Play</button>
+                <button id="play-pause-btn" class="icon-button">
+                    <img id="play-icon" src="media/icons/play.png" alt="Play icon">
+                    <span id="play-text">Play</span>
+                </button>
 
                 <div class="progress-bar">
                     <span id="progress-bar-fill"></span>
@@ -41,10 +44,17 @@
                     <span id="duration">0:00</span>
                 </div>
 
-                <label>
-                    Volume
-                    <input id="volume-slider" type="range" min="0" max="1" step="0.01" value="0.7">
-                </label>
+                <div class="volume-control">
+                    <img src="media/icons/audio.png" alt="Volume icon">
+                
+                    <input
+                        id="volume-slider"
+                        type="range"
+                        min="0"
+                        max="1"
+                        step="0.01"
+                        value="0.7">
+                </div> 
 
                 <button id="focus-mode-btn">Enter Focus Mode</button>
             </div>
