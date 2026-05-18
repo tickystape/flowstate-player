@@ -2,6 +2,8 @@
 
 const audio = document.getElementById("audio-player");
 const playButton = document.getElementById("play-pause-btn");
+const playIcon = document.getElementById("play-icon");
+const playText = document.getElementById("play-text");
 const progressFill = document.getElementById("progress-bar-fill");
 const currentTime = document.getElementById("current-time");
 const duration = document.getElementById("duration");
@@ -11,14 +13,25 @@ const focusButton = document.getElementById("focus-mode-btn");
 /* This sets the starting volume so the audio does not begin too loudly. */
 audio.volume = 0.7;
 
-/* This lets the user play and pause the audio with one button. */
+/* Allows the user play and pause the audio while also changing the button icon and text. */
+
 playButton.onclick = function () {
-    if (audio.paused) { 
-        audio.play(); 
-        playButton.textContent = "Pause"; 
-    } else { 
-        audio.pause(); 
-        playButton.textContent = "Play";
+
+    if (audio.paused) {
+
+        audio.play();
+
+        playText.textContent = "Pause";
+
+        playIcon.src = "media/icons/pause.png";
+
+    } else {
+
+        audio.pause();
+
+        playText.textContent = "Play";
+
+        playIcon.src = "media/icons/play.png";
     }
 };
 
