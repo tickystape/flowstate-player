@@ -107,10 +107,8 @@ improving usability and keeping the interface visually clean. */
     gap: 16px;
 }
 
-/* 
-These button styles were designed to feel modern and interactive.
-Hover animations and rounded edges improve feedback and usability.
-*/
+/* Hover animations and rounded edges improve feedback and usability. 
+Alot of my CSS styling I learnt from the previous assignment*/
 button {
     border: none;
     border-radius: 999px;
@@ -128,19 +126,15 @@ button {
         box-shadow 0.2s ease;
 }
 
-/* 
-This hover effect provides clear visual feedback to users when interacting
-with controls, helping the interface feel more responsive and engaging.
-*/
+/* This hover effect provides clear visual feedback to users when interacting
+with controls, helping the interface feel more responsive and engaging. */
 button:hover {
     transform: translateY(-2px);
     box-shadow: 0 12px 30px rgba(14, 165, 233, 0.25);
 }
 
-/* 
-This section styles the custom audio progress bar.
-Rounded corners and gradient colours were used to match the overall aesthetic.
-*/
+/* Custom audio progress bar.
+Rounded corners and gradient colours were used to match the overall aesthetic. */
 .progress-bar {
     height: 12px;
     width: 100%;
@@ -153,9 +147,7 @@ Rounded corners and gradient colours were used to match the overall aesthetic.
     cursor: pointer;
 }
 
-/* 
-The fill element visually displays the current playback progress of the audio.
-*/
+/* The fill element visually displays the current playback progress of the audio. */
 #progress-bar-fill {
     display: block;
     height: 100%;
@@ -166,10 +158,8 @@ The fill element visually displays the current playback progress of the audio.
     border-radius: 999px;
 }
 
-/* 
-This section displays the current playback time and total duration.
-Flexbox is used to evenly separate both values for readability.
-*/
+/* This section displays the current playback time and total duration.
+Flexbox is used to evenly separate both values for readability. */
 .time-row {
     display: flex;
     justify-content: space-between;
