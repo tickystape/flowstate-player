@@ -304,3 +304,57 @@ by reducing spacing and resizing large visual elements.
         height: 200px;
     }
 }
+
+/* This styles buttons that use both icons and text to make the controls easier to understand visually. */
+
+.icon-button {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+}
+
+
+/* This controls the size of the icons inside the buttons. */
+
+.icon-button img {
+    width: 20px;
+
+    height: 20px;
+}
+
+
+/* Creates a smaller vertical volume slider that fits the compact media player layout more cleanly. */
+
+.volume-control {
+    height: 100px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+}
+
+
+/* This styles the volume icon. */
+
+.volume-control img {
+    width: 22px;
+
+    height: 22px;
+}
+
+
+/* Rotates the slider vertically instead of being horizontal */
+
+#volume-slider {
+    width: 80px;
+
+    transform: rotate(-90deg);
+}
