@@ -1,47 +1,34 @@
-/* This JavaScript controls the FlowState audio player. It includes play/pause, volume control, progress updates, readable time display, and the custom Focus Mode feature. */
+/* This JavaScript controls the FlowState audio player, including play/pause, volume, progress, time display, clickable progress bar, and Focus Mode. */
 
 const audio = document.getElementById("audio-player");
 const playButton = document.getElementById("play-pause-btn");
-const playIcon = document.getElementById("play-icon");
-const playText = document.getElementById("play-text");
+const progressBar = document.querySelector(".progress-bar");
 const progressFill = document.getElementById("progress-bar-fill");
 const currentTime = document.getElementById("current-time");
 const duration = document.getElementById("duration");
 const volume = document.getElementById("volume-slider");
-const focusButton = document.getElementById("focus-mode-btn");
-const progressBar = document.querySelector(".progress-bar");
+const focusButton = document.getElementById("focus-mode-btn"); 
 
 /* This sets the starting volume so the audio does not begin too loudly. */
 audio.volume = 0.7;
 
-/* Allows the user play and pause the audio while also changing the button icon and text. */
-
-playButton.onclick = function () {
-
-    if (audio.paused) {
-
-        audio.play();
-
-        playText.textContent = "Pause";
-
-        playIcon.src = "media/icons/pause.png";
-
+/* This lets the user play and pause the audio with one simple button. */
+playButton.onclick = function () { 
+    if (audio.paused) { 
+        audio.play(); 
+        playButton.textContent = "Pause";
     } else {
-
-        audio.pause();
-
-        playText.textContent = "Play";
-
-        playIcon.src = "media/icons/play.png";
+        audio.pause(); 
+        playButton.textContent = "Play";
     }
 };
 
 /* This changes the audio volume when the user moves the volume slider. */
-volume.oninput = function () { 
+volume.oninput = function () {
     audio.volume = volume.value;
 };
 
-/* This converts seconds into a readable minute and second format, and stops the NaN:NaN problem before the audio fully loads. */
+/* This converts seconds into readable time and prevents NaN errors. */
 function makeTime(seconds) {
     if (isNaN(seconds)) {
         return "0:00";
@@ -72,24 +59,31 @@ audio.ontimeupdate = function () {
 
     progressFill.style.width = progress + "%";
     currentTime.textContent = makeTime(audio.currentTime);
-}; 
-
-/* This is my custom Focus Mode feature, which makes the player feel more immersive and distraction-free for study sessions. */
-focusButton.onclick = function () { 
-    document.body.classList.toggle("focus-mode");
-
-    if (document.body.classList.contains("focus-mode")) { 
-        focusButton.textContent = "Exit Focus Mode";
-    } else { 
-        focusButton.textContent = "Enter Focus Mode";
-    } 
 };
 
-/* Progress bar can be clicked to jump to a different part of the song. */
+/* This lets the user click the progress bar to jump to a different part of the song. */
 progressBar.onclick = function (event) {
     let barWidth = progressBar.clientWidth;
     let clickPosition = event.offsetX;
-    let songDuration = audio.duration;
 
-    audio.currentTime = (clickPosition / barWidth) songDuration; 
+    if (!isNaN(audio.duration)) {
+        audio.currentTime = (clickPosition / barWidth) * audio.duration;
+    }
 };
+
+/* This resets the play button when the audio finishes. */
+audio.onended = function () {
+    playButton.textContent = "Play";
+    progressFill.style.width = "0%";
+};
+
+/* This is my custom Focus Mode feature, which creates a more immersive and distraction-free study environment. */
+focusButton.onclick = function () {
+    document.body.classList.toggle("focus-mode");
+
+    if (document.body.classList.contains("focus-mode")) {
+        focusButton.textContent = "Exit Focus Mode";
+    } else {
+        focusButton.textContent = "Enter Focus Mode";
+    }
+}; 
