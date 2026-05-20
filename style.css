@@ -301,7 +301,6 @@ YouTUbe tutorial used for responsive media: https://www.youtube.com/watch?v=n9yI
     align-items: center; 
     justify-content: center; 
     gap: 18px; 
-    margin-top: 2px; 
 }
 
 .volume-control > img {
