@@ -87,7 +87,7 @@ audio.onended = function () {
     progressFill.style.width = "0%";
 };
 
-/* Custom Focus Mode feature, which creates a more immersive and distraction-free study environment. */
+/* Focus mode feature, which creates a more immersive study environment. */
 focusButton.onclick = function () {
     document.body.classList.toggle("focus-mode");
 

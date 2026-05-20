@@ -1,4 +1,5 @@
 /* All icons are from icons8.com 
+https://www.youtube.com/watch?v=dsZ7RN9ItR4 "Create this trendy blurry glass effect with CSS"
 This helps to make sizing more consistent across the entire website.
 Using border-box helps prevent layout issues when adding padding or borders. */
 * {
@@ -314,6 +315,8 @@ YouTUbe tutorial used for responsive media: https://www.youtube.com/watch?v=n9yI
     width: 180px;
     transform: none; 
     cursor: pointer;
+    appearance: none;
+    background: transparent;
 }
 
 /* This styles the loop button as a compact icon-only control beside the volume slider. */
