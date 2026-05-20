@@ -296,7 +296,6 @@ YouTUbe tutorial used for responsive media: https://www.youtube.com/watch?v=n9yI
 
 
 /* Style for volume controls so they are easier to see and more balanced within the player layout. */
-/* This section groups volume and loop controls together because both affect how the study audio plays. */
 .volume-control {
     display: flex;
     align-items: center; 
@@ -306,8 +305,8 @@ YouTUbe tutorial used for responsive media: https://www.youtube.com/watch?v=n9yI
 }
 
 .volume-control > img {
-    width: 40px;
-    height: 40px;
+    width: 26px;
+    height: 26px;
     object-fit: contain;
 }
 
