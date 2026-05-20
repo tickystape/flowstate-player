@@ -102,11 +102,9 @@ focusButton.onclick = function () {
 loopButton.onclick = function () {
     audio.loop = !audio.loop;
 
-    if (audio.loop) {
-        loopButton.textContent = "Loop On";
+    if (audio.loop) { 
         loopButton.classList.add("loop-active");
-    } else {
-        loopButton.textContent = "Loop Off";
+    } else { 
         loopButton.classList.remove("loop-active");
     }
 };

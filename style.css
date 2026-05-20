@@ -296,48 +296,48 @@ YouTUbe tutorial used for responsive media: https://www.youtube.com/watch?v=n9yI
 
 
 /* Style for volume controls so they are easier to see and more balanced within the player layout. */
+/* This section groups volume and loop controls together because both affect how the study audio plays. */
 .volume-control {
     display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 18px;
-
-    margin-top: 10px;
-
-    margin-bottom: 10px;
+    align-items: center; 
+    justify-content: center; 
+    gap: 18px; 
+    margin-top: 10px; 
 }
 
-
-.volume-control img { 
-    width: 24px;
-
-    height: 24px;
-
+.volume-control > img {
+    width: 40px;
+    height: 40px;
     object-fit: contain;
 }
 
-
-/* Creates a cleaner medium-sized horizontal slider that feels less cramped. */
-#volume-slider {
-    width: 260px;
-
-    transform: none;
-
+#volume-slider { 
+    width: 180px;
+    transform: none; 
     cursor: pointer;
 }
 
-/* Style for the loop button so users can clearly see when looping is turned on or off. */
+/* This styles the loop button as a compact icon-only control beside the volume slider. */
 #loop-btn {
-    background: rgba(148, 163, 184, 0.2);
-    color: #f8fafc;
-    border: 1px solid rgba(148, 163, 184, 0.35);
+    width: 46px;
+    height: 46px;
+    padding: 8px;
+    border-radius: 50%;
+    background: rgba(148, 163, 184, 0.15);
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    display: grid;
+    place-items: center;
 }
 
-/* Shows users when the looping effect is active. */
+#loop-icon {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+}
+
+/* This active state shows when looping is turned on without changing the PNG itself. */
 #loop-btn.loop-active {
-    background: linear-gradient(135deg, #a78bfa, #38bdf8);
-    color: white;
+    background: rgba(56, 189, 248, 0.22);
+    border-color: rgba(56, 189, 248, 0.75);
+    box-shadow: 0 0 18px rgba(56, 189, 248, 0.45);
 }
