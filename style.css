@@ -1,4 +1,5 @@
-/* This helps to make sizing more consistent across the entire website.
+/* All icons are from icons8.com 
+This helps to make sizing more consistent across the entire website.
 Using border-box helps prevent layout issues when adding padding or borders. */
 * {
     box-sizing: border-box;
@@ -326,4 +327,17 @@ YouTUbe tutorial used for responsive media: https://www.youtube.com/watch?v=n9yI
     transform: none;
 
     cursor: pointer;
+}
+
+/* Style for the loop button so users can clearly see when looping is turned on or off. */
+#loop-btn {
+    background: rgba(148, 163, 184, 0.2);
+    color: #f8fafc;
+    border: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+/* Shows users when the looping effect is active. */
+#loop-btn.loop-active {
+    background: linear-gradient(135deg, #a78bfa, #38bdf8);
+    color: white;
 }
