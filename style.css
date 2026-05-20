@@ -1,7 +1,9 @@
 /* All icons are from icons8.com 
-https://www.youtube.com/watch?v=dsZ7RN9ItR4 "Create this trendy blurry glass effect with CSS"
-This helps to make sizing more consistent across the entire website.
-Using border-box helps prevent layout issues when adding padding or borders. */
+https://www.youtube.com/watch?v=dsZ7RN9ItR4 "Create this trendy blurry glass effect with CSS" */
+
+
+/* This helps to make sizing more consistent across the entire website.
+Using border-box helped prevent layout issues. */
 * {
     box-sizing: border-box;
 }
