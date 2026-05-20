@@ -15,6 +15,7 @@ const currentTime = document.getElementById("current-time");
 const duration = document.getElementById("duration");
 const volume = document.getElementById("volume-slider");
 const focusButton = document.getElementById("focus-mode-btn"); 
+const loopButton = document.getElementById("loop-btn"); 
 
 /* This sets the starting volume so the audio does not begin too loudly. */
 audio.volume = 0.7;
@@ -96,3 +97,16 @@ focusButton.onclick = function () {
         focusButton.textContent = "Enter Focus Mode";
     }
 }; 
+
+/* Allows users to turn looping on and off. */
+loopButton.onclick = function () {
+    audio.loop = !audio.loop;
+
+    if (audio.loop) {
+        loopButton.textContent = "Loop On";
+        loopButton.classList.add("loop-active");
+    } else {
+        loopButton.textContent = "Loop Off";
+        loopButton.classList.remove("loop-active");
+    }
+};
