@@ -3,7 +3,7 @@ https://www.youtube.com/watch?v=dsZ7RN9ItR4 "Create this trendy blurry glass eff
 
 
 /* This helps to make sizing more consistent across the entire website.
-Using border-box helped prevent layout issues. */
+Using border-box helped prevent layout issues later on. */
 * {
     box-sizing: border-box;
 }
