@@ -307,6 +307,21 @@ YouTUbe tutorial used for responsive media: https://www.youtube.com/watch?v=n9yI
     background: transparent;
 }
 
+/* Spacing for volume control*/
+.volume-control {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    margin: 16px auto 0 auto;
+
+    width: fit-content;
+}
+
 
 /* Style for slider track, darker background with subtle transparency. */
 #volume-slider::-webkit-slider-runnable-track {
