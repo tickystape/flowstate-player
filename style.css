@@ -297,26 +297,50 @@ YouTUbe tutorial used for responsive media: https://www.youtube.com/watch?v=n9yI
 
 
 /* Style for volume controls so they are easier to see and more balanced within the player layout. */
-.volume-control {
-    display: flex;
-    align-items: center; 
-    justify-content: center; 
-    gap: 18px; 
-    margin-bottom: 10px;
-}
-
-.volume-control > img {
-    width: 26px;
-    height: 26px;
-    object-fit: contain;
-}
-
-#volume-slider { 
+#volume-slider {
     width: 180px;
-    transform: none; 
+
     cursor: pointer;
+
     appearance: none;
+
     background: transparent;
+}
+
+
+/* Style for slider track, darker background with subtle transparency. */
+#volume-slider::-webkit-slider-runnable-track {
+    height: 8px;
+
+    border-radius: 999px;
+
+    background: rgba(148, 163, 184, 0.25);
+}
+
+
+/* Makes the slider handle using a glowing blue circular design. */
+#volume-slider::-webkit-slider-thumb {
+    appearance: none;
+
+    width: 18px;
+
+    height: 18px;
+
+    border-radius: 50%;
+
+    background: #38bdf8;
+
+    margin-top: -5px;
+
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.6);
+
+    transition: transform 0.15s ease;
+}
+
+
+/* Enlarges the slider handle when hovered for clearer feedback. */
+#volume-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.15);
 }
 
 /* This styles the loop button as a compact icon-only control beside the volume slider. */
