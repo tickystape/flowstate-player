@@ -315,7 +315,6 @@ YouTUbe tutorial used for responsive media: https://www.youtube.com/watch?v=n9yI
     width: 180px;
     transform: none; 
     cursor: pointer;
-    appearance: none;
 }
 
 /* This styles the loop button as a compact icon-only control beside the volume slider. */
